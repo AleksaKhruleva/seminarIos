@@ -49,20 +49,6 @@ final class Networking: NetworkingProtocol {
     }
     
     private func generateDestinationURL(for request: Request) -> URL? {
-        guard
-            let url = URL(string: baseUrl),
-            var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        else {
-            return nil
-        }
-        
-        let queryItems = request.parameters?.map {
-            URLQueryItem(name: $0, value: $1)
-        }
-        
-        components.path += request.endpoint.compositePath
-        components.queryItems = queryItems
-        
-        return components.url
+        return URL(string: baseUrl + request.endpoint.compositePath)
     }
 }

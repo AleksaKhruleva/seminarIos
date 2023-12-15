@@ -13,7 +13,7 @@ enum ArticlesEndpoint: Endpoint {
     var compositePath: String {
         switch self {
         case .news(let rubricId, let pageIndex):
-            "todos/3"
+            "api/Section?pageSize=8&rubricId=\(rubricId)&pageIndex=\(pageIndex)"
         }
     }
     

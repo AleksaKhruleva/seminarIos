@@ -9,8 +9,7 @@ import Foundation
 
 final class ArticlesWorker {
     private enum Constants {
-//        static let baseUrl: String = "https://news.myseldon.com/"
-        static let baseUrl: String = "https://jsonplaceholder.typicode.com/"
+        static let baseUrl: String = "https://news.myseldon.com/"
     }
     
     let networking: NetworkingProtocol
