@@ -11,8 +11,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TodoWorker().fetchTodos { todo in
-            
+        view.backgroundColor = .blue
+        
+        ArticlesWorker().fetchNews(page: 1) { result in
+            print(result as Any)
         }
     }
 }
